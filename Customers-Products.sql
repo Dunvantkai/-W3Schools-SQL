@@ -221,9 +221,13 @@ IN    To specify multiple possible values for a column
 
 SELECT * FROM Customers WHERE CustomerID=69; --selects the id 69 customer from the custermers table
  
- SELECT * FROM Customers ORDER BY Country, CustomerName; --sorts by country
+SELECT * FROM Customers ORDER BY Country, CustomerName; --sorts by country
 
- SELECT * FROM Customers ORDER BY Country ASC, CustomerName DESC; --sorts by country
+SELECT * FROM Customers ORDER BY Country ASC, CustomerName DESC; --sorts by country
+
+SELECT * FROM Customers WHERE Country = 'Spain' AND CustomerName LIKE 'G%'; --GRABS ALL PEOPLE FROM SPAIN AND WIHT NAMES THAT START WITH g
+
+
 
 -------------------------------------------------------------
 --Products
