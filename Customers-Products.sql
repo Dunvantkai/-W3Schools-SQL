@@ -227,11 +227,44 @@ SELECT * FROM Customers ORDER BY Country ASC, CustomerName DESC; --sorts by coun
 
 SELECT * FROM Customers WHERE Country = 'Spain' AND CustomerName LIKE 'G%'; --GRABS ALL PEOPLE FROM SPAIN AND WIHT NAMES THAT START WITH g
 
+SELECT * FROM Customers WHERE Country = 'Germany' and City = 'Berlin' and PostalCode > 1200;
 
+SELECT * FROM Customers WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%');
+
+SELECT * FROM Customers WHERE Country = 'Spain' AND CustomerName LIKE 'G%' OR CustomerName LIKE 'R%'
+
+SELECT * FROM Customers WHERE Country = 'Germany' OR Country = 'Spain';
+
+/* 
+The OR operator displays a record if any of the conditions are TRUE.
+
+The AND operator displays a record if all the conditions are TRUE.
+*/
+
+SELECT * FROM Customers WHERE City = 'Berlin' OR CustomerName LIKE 'G%' OR Country = 'Norway'; -- berlin or name starts with g or norway
+
+SELECT * FROM Customers WHERE Country = 'Spain' AND (CustomerName LIKE 'G%' OR CustomerName LIKE 'R%'); --Select all Spanish customers that starts with either "G" or "R":
+
+SELECT * FROM Customers WHERE Country = 'Spain' AND CustomerName LIKE 'G%' OR CustomerName LIKE 'R%'; --Without parenthesis, the select statement will return all customers from Spain that starts with a "G", plus all customers that starts with an "R", regardless of the country value:
+
+SELECT * FROM Customers WHERE NOT Country = 'Spain';
+
+SELECT * FROM Customers WHERE CustomerName NOT LIKE 'A%';
+
+SELECT * FROM Customers WHERE CustomerID NOT BETWEEN 10 AND 60;
+
+SELECT * FROM Customers WHERE City NOT IN ('Paris', 'London');
+
+SELECT * FROM Customers WHERE NOT CustomerID > 50;
+
+--INSERT INTO table_name (column1, column2, column3, ...)
+--VALUES (value1, value2, value3, ...);
 
 -------------------------------------------------------------
 --Products
 -------------------------------------------------------------
+
+
 
 SELECT * FROM Products; /*selects every thing from the products*/
 
