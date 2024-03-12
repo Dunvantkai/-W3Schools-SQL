@@ -12,7 +12,7 @@ CREATE TABLE Customers (
 	Country VARCHAR(255)
 );
 
-	CREATE TABLE Products (
+CREATE TABLE Products (
 	ProductID INT PRIMARY KEY,
 	ProductsName varchar(255),
 	SupplierID INT,
@@ -259,6 +259,28 @@ SELECT * FROM Customers WHERE NOT CustomerID > 50;
 
 --INSERT INTO table_name (column1, column2, column3, ...)
 --VALUES (value1, value2, value3, ...);
+
+SELECT * FROM Customers;
+
+INSERT INTO Customers (CustomerID,CustomerName, ContactName, Address, City, PostalCode, Country)
+VALUES
+('92', 'Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway'),
+('93', 'Greasy Burger', 'Per Olsen', 'Gateveien 15', 'Sandnes', '4306', 'Norway'),
+('94', 'Tasty Tee', 'Finn Egan', 'Streetroad 19B', 'Liverpool', 'L1 0AA', 'UK');
+
+SELECT CustomerName, ContactName, Address
+FROM Customers
+WHERE Address IS NULL;
+
+SELECT CustomerName, ContactName, Address
+FROM Customers
+WHERE Address IS NOT NULL;
+
+UPDATE Customers
+SET ContactName = 'Alfred Schmidt', City = 'Frankfurt'
+WHERE CustomerID = 1;
+
+SELECT * FROM Customers WHERE CustomerID=1; 
 
 -------------------------------------------------------------
 --Products
